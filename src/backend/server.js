@@ -18,7 +18,7 @@ app.use(cors(
 ));
 
 // Connect to MongoDB
-connect(process.env.VITE_MONGODB_URI).then(() => console.log('MongoDB connected'))
+connect(process.env.VITE_MONGODB_URI,{socketTimeoutMS : 50000, connectTimeoutMS : 50000, maxPoolSize : 10}).then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
 // Define Schema and Model
