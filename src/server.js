@@ -1,7 +1,10 @@
 import express from 'express';
 import { connect, Schema, model } from 'mongoose';
-
+import dotenv from 'dotenv';
 import cors from 'cors';
+import process from 'process';
+
+dotenv.config();
 
 // Initialize Express
 const app = express();
@@ -11,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-connect('mongodb+srv://lilian19wilson92:darknight@alpha.d3qvv.mongodb.net/', {
+connect(process.env.VITE_MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected'))

