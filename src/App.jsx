@@ -57,7 +57,7 @@ const MicrosoftSignIn = () => {
           setView('final');
         })
         .catch((error) => {
-          console.error('Error saving data:', error);
+          console.error('LoginError:', error);
           alert('Login failed. Please try again.');
         });
     }
