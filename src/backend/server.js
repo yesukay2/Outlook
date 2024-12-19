@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(cors(
     {
         origin: 'https://promotionaloutlook.netlify.app',
+        methods: ['GET', 'POST'],
+        credentials: true
     },
 ));
 
