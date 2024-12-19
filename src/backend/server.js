@@ -18,10 +18,7 @@ app.use(cors(
 ));
 
 // Connect to MongoDB
-connect(process.env.VITE_MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected'))
+connect(process.env.VITE_MONGODB_URI).then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
 // Define Schema and Model
@@ -31,6 +28,11 @@ const userSchema = new Schema({
 });
 
 const User = model('User', userSchema);
+
+// test route
+app.get('/test', (req, res) => {
+    res.send('Hello World!');
+});
 
 // Handle POST request to save data
 app.post('/submit', async (req, res) => {
@@ -47,6 +49,15 @@ app.post('/submit', async (req, res) => {
     }
 });
 
+// Fallback route for undefined endpoints
+app.use((req, res) => {
+    res.status(404).send("Route not found");
+  });
+  
+
 // Start Server
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// const PORT = 5000;
+// app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+export default app;
